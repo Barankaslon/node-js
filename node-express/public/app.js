@@ -1,8 +1,12 @@
-document.querySelectorAll('.price').forEach(node => {
-    node.textContent = new Intl.NumberFormat('en-US', {
+const toCurrency = price => {
+    return new Intl.NumberFormat('en-US', {
         currency: 'CAD',
         style: 'currency'
-    }).format(node.textContent)
+    }).format(price)
+}
+
+document.querySelectorAll('.price').forEach(node => {
+    node.textContent = toCurrency(node.textContent)
 })
 
 const $cart = document.querySelector('#cart')
@@ -17,7 +21,23 @@ if ($cart) {
                 method: 'delete'
             }).then(res => res.json())
               .then(card => {
-                  console.log(card)
+                if (card.courses.length) {
+                    const html = card.courses.map(c => {
+                        return `
+                        <tr>
+                            <td>${c.title}</td>
+                            <td>${c.count}</td>
+                            <td>
+                                <button class="btn btn-small js-remove" data-id="${c.id}">Delete</button>
+                            </td>
+                        </tr>
+                        `
+                    }).join('')
+                    $cart.querySelector('tbody').innerHTML = html
+                    $cart.querySelector('.price').textContent = toCurrency(card.price)
+                } else {
+                    $cart.innerHTML = '<p>Cart is Empty</p>'
+                }
               })
         }
     })
