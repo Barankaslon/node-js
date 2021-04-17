@@ -1,4 +1,23 @@
-const { v4: uuidv4 } = require('uuid');
+const {Schema, model} = require('mongoose')
+
+const course = new Schema({
+    title: {
+        type: String, 
+        required: true,
+    },
+    price: {
+        type: Number,
+        required: true,
+    },
+    img: String
+})
+
+module.exports = model('Course', course)
+
+
+
+
+/* const { v4: uuidv4 } = require('uuid');
 const fs = require('fs')
 const path = require('path')
 
@@ -83,4 +102,4 @@ class Course {
     }
 }
 
-module.exports = Course
+module.exports = Course */
