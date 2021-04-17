@@ -6,10 +6,13 @@ const homeRoutes = require('./routes/home')
 const addRoutes = require('./routes/add')
 const cardRoutes = require('./routes/card')
 const coursesRoutes = require('./routes/courses')
+const Handlebars = require('handlebars')
+const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
 
 const app = express()
 
 const hbs = exphbs.create({
+    handlebars: allowInsecurePrototypeAccess(Handlebars),
     defaultLayout: 'main',
     extname: 'hbs'
 })
