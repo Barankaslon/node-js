@@ -1,5 +1,14 @@
-body {
-    background: #000;
-    color: #fff;
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
 }
 
+.wrapper {
+    background: linear-gradient(to bottom, #65dfc9, #6cdbeb);
+    height: 100vh;
+    padding-top: 25px;
+}
