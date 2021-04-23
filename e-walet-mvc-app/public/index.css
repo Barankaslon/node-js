@@ -1,0 +1,389 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+.wrapper {
+    background: linear-gradient(to bottom, #65dfc9, #6cdbeb);
+    height: 100vh;
+    padding-top: 25px;
+}
+
+.glass {
+    border: 1px solid #65dfc9;
+    border-radius: 10px;
+    background-color: #fff;
+    background: linear-gradient(to right bottom,
+     rgba(255, 255, 255, .6),
+     rgba(255, 255, 255, .3));
+}
+
+.header {
+    display: flex;
+    width: 80%;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.header__title {
+    color: #3D6670;
+    font-weight: 900;
+    font-size: 42px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+}
+
+.header__title span {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: 9px;
+    text-align: center;
+}
+
+.header img {
+    width: 100px;
+    height: 100px;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login i {
+    font-size: 40px;
+    color: #3D6670;
+    padding: 0 15px;
+}
+
+.main {
+    width: 80%;
+    height: 70vh;
+    margin: 25px auto;
+    position: relative;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+}
+
+.balance {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    min-width: 30%;
+    min-height: 15%;
+    color: #3D6670;
+    background: linear-gradient(to right bottom,
+     rgba(255, 255, 255, 0.4),
+     rgba(255, 255, 255, .2));
+    box-shadow: 6px 6px 20px rgba(122, 122, 122, .2);
+    border: none;
+    text-align: center;
+}
+
+.balance__sum {
+    font-weight: 300;
+    font-size: 35px;
+    font-family: 'Dosis', sans-serif;
+}
+
+.balance__sum span {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.square-1 {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 30%;
+    left: 8%;
+    border:none;
+    z-index: 1;
+}
+.square-2 {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    border:none;
+    z-index: 1;
+}
+.square-3 {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    bottom: 8%;
+    left: 8%;
+    border:none;
+    z-index: 1;
+}
+
+.dashboard {
+    height: 100%;
+    width: 30%;
+    position: absolute;
+    color: #3D6670;
+    background: linear-gradient(to right bottom,
+     rgba(255, 255, 255, .4),
+     rgba(255, 255, 255, .2));
+    border: none;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.dashboard a {
+    color: #3D6670;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.tools {
+    margin-top: 30px;
+}
+
+.invest,
+.savings,
+.income {
+    border: none;
+    margin: 10px;
+    padding: 10px 0;
+    background: linear-gradient(to right bottom,
+    rgba(255, 255, 255, .4),
+    rgba(255, 255, 255, .2));
+}
+
+.time {
+    padding: 25px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .time::before{
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    width: 100%;
+    height: 60px;
+    background: #000;
+    border-radius: 50%;
+} */
+
+
+.box {
+    position: relative;
+    z-index: 1;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(to right bottom,
+    rgba(255, 255, 255, .4),
+    rgba(255, 255, 255, .2));
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, .5);
+}
+
+.clock {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(transparent, rgba(42, 255, 202, 0.2)), url(../images/clock.png);
+    background-size: cover;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, .5);
+    box-shadow:-10px -10px 20px 
+    rgba(255, 255, 255, .1), 10px 10px 20px 
+    rgba(0, 0, 0, .1);
+
+}
+
+.clock::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #fff;border-radius: 50%;
+    z-index: 100;
+}
+
+.hour,
+.min,
+.sec {
+    position: absolute;
+}
+
+.hour, .hr {
+    width: 100px;
+    height: 100px;
+}
+
+.min, .mn {
+    width: 150px;
+    height: 150px;
+}
+
+.sec, .sc {
+    width: 180px;
+    height: 180px;
+}
+
+.hr, .mn, .sc {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.hr::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 50px;
+    background: #00aa17;
+    z-index: 11;
+    border-radius: 4px;
+}
+
+.mn::before {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 70px;
+    background: #3D6670;
+    z-index: 12;
+    border-radius: 4px;
+}
+
+.sc::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100px;
+    background: #ffffff;
+    z-index: 12;
+    border-radius: 4px;
+}
+
+
+.user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user img {
+    width: 80px;
+    height: 80px;
+    padding: 5px;
+    background: #fff;
+    background: linear-gradient(to right bottom,
+    rgba(255, 255, 255, .4),
+    rgba(255, 255, 255, .2));
+    border-radius: 50%;
+}
+
+.income__block {
+    width: 60%;
+    height:70%;
+    background: linear-gradient(to right bottom,
+    rgba(255, 255, 255, .4),
+    rgba(255, 255, 255, .2));
+    position: absolute;
+    top: 20%;
+    left: 35%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 6px 6px 20px rgba(122, 122, 122, .2);
+}
+
+.wage {
+    padding: 10px;
+    min-width:30%;
+    min-height: 40%;
+    border: none;
+    background: linear-gradient(to right bottom,
+    rgba(255, 255, 255, .4),
+    rgba(255, 255, 255, .2));
+    box-shadow: 6px 6px 20px rgba(122, 122, 122, .2);
+}
+
+.wage__title {
+    font-weight: 800;
+    color: #3D6670;
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+.add__income {
+    border: none;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    padding: 20px;
+    color: #3D6670;
+    font-weight: 800;
+    box-shadow: 6px 6px 20px rgba(122, 122, 122, .2);
+    transition: box-shadow 1s;
+}
+
+.add__income:hover {
+    cursor: pointer;
+    box-shadow: 15px 15px 20px rgba(88, 88, 88, 0.2);
+}
+
+.active {
+    background: linear-gradient(to right bottom,
+    rgba(255, 255, 255, .8),
+    rgba(255, 255, 255, .3));
+}
+
+.cursor {
+    transition: background .3s;
+}
+
+.cursor:hover {
+    cursor: pointer;
+    background: linear-gradient(to right bottom,
+    rgba(255, 255, 255, .8),
+    rgba(255, 255, 255, .3));
+}
+
+.wage__list {
+
+}
+
+.wage__list li {
+    font-weight: 600;
+}
+
+.wage__list span {
+    font-weight: 300;
+    padding: 0 15px;
+}
+
+
+
+.wage__total-prev {
+    display: flex;
+
+}
+
+.footer {
+    text-align: center;
+}
