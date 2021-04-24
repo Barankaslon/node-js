@@ -3,11 +3,13 @@
 
     <div class="wrapper">
         {{> header }}
-        {{> navbar }}
-        {{{ body }}}
+        <div class="main glass">
+            {{> navbar }}
+            {{{ body }}}
+        </div>
     </div>
 
-
+        {{> squares }}
     {{> footer }}
 
 </body>
