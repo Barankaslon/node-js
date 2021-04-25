@@ -16,11 +16,31 @@ app.set('views', 'pages')
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
-    res.render('index')
+    res.render('index', {
+        title: 'Main page'
+    })
 })
 
 app.get('/invest', (req, res) => {
-    res.render('invest')
+    res.render('invest', {
+        title: 'Your Investments'
+    })
+})
+
+app.get('/income', (req, res) => {
+    res.render('income', {
+        title: 'Your income'
+    })
+})
+
+app.get('/saving', (req, res) => {
+    res.render('saving', {
+        title: 'Your savings'
+    })
+})
+
+app.get('/add', (req, res) => {
+    res.render('add')
 })
 
 const PORT = process.env.PORT || 3000
