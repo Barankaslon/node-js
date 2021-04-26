@@ -4,15 +4,35 @@
         <span>USER NAME</span>
     </div>
     <div class="tools">
-        <div class="invest glass cursor">
-            <a class="invest__link" href="/invest">INVESTMENTS</a>
-        </div>
-        <div class="savings glass cursor">
-            <a class="savings__link" href="/saving">SAVINGS</a>
-        </div>
-        <div class="income glass active cursor">
-            <a class="income__link" href="/income">INCOME</a>
-        </div>
+        {{#if isInvest}}
+            <div class="invest glass active cursor">
+                <a class="invest__link" href="/invest">INVESTMENTS</a>
+            </div>
+        {{else}}
+            <div class="invest glass cursor">
+                <a class="invest__link" href="/invest">INVESTMENTS</a>
+            </div>
+        {{/if}}
+
+        {{#if isSaving}}
+            <div class="savings glass active cursor">
+                <a class="savings__link" href="/saving">SAVINGS</a>
+            </div>
+        {{else}}
+            <div class="savings glass cursor">
+                <a class="savings__link" href="/saving">SAVINGS</a>
+            </div>
+        {{/if}}
+
+        {{#if isIncome}}
+            <div class="income glass active cursor">
+                <a class="income__link" href="/income">INCOME</a>
+            </div>
+        {{else}}
+            <div class="income glass cursor">
+                <a class="income__link" href="/income">INCOME</a>
+            </div>
+        {{/if}}
     </div>
 
     <div class="time">

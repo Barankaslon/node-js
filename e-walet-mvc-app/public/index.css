@@ -349,7 +349,7 @@
 
 .active {
     background: linear-gradient(to right bottom,
-    rgba(255, 255, 255, .8),
+    rgba(255, 255, 255, .9),
     rgba(255, 255, 255, .3));
 }
 

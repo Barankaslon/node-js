@@ -1,6 +1,10 @@
 const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars')
+const homeRoutes = require('./routes/home')
+const investRoutes = require('./routes/invest')
+const savingRoutes = require('./routes/saving')
+const incomeRoutes = require('./routes/income')
 
 const app = express();
 
@@ -14,30 +18,10 @@ app.set('view engine', 'hbs')
 app.set('views', 'pages')
 
 app.use(express.static('public'))
-
-app.get('/', (req, res) => {
-    res.render('index', {
-        title: 'Main page'
-    })
-})
-
-app.get('/invest', (req, res) => {
-    res.render('invest', {
-        title: 'Your Investments'
-    })
-})
-
-app.get('/income', (req, res) => {
-    res.render('income', {
-        title: 'Your income'
-    })
-})
-
-app.get('/saving', (req, res) => {
-    res.render('saving', {
-        title: 'Your savings'
-    })
-})
+app.use('/', homeRoutes)
+app.use('/invest', investRoutes)
+app.use('/saving', savingRoutes)
+app.use('/income', incomeRoutes)
 
 app.get('/add', (req, res) => {
     res.render('add')
