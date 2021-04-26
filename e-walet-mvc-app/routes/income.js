@@ -1,11 +1,14 @@
 const {Router} = require('express');
+const Income = require('../models/income')
 
 const router = Router()
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
+    const incomes = await Income.getAll()
     res.render('income', {
         title: 'Your income',
-        isIncome: true
+        isIncome: true,
+        incomes
     })
 })
 

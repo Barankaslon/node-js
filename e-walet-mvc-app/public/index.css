@@ -5,7 +5,9 @@
     list-style: none;
     box-sizing: border-box;
     font-family: 'Nunito', sans-serif;
+    
 }
+
 
 .wrapper {
     background: linear-gradient(to bottom, #65dfc9, #6cdbeb);
@@ -138,6 +140,7 @@
     border: none;
     text-align: center;
     padding-top: 15px;
+    left: 0;
 }
 
 .dashboard a {
@@ -312,10 +315,24 @@
     box-shadow: 6px 6px 20px rgba(122, 122, 122, .2);
 }
 
+.container {
+    width: 70%;
+    position: absolute;
+    right: 0;
+    display: flex;
+}
+
+.get__the-job {
+    font-weight: 800;
+    font-size: 45px;
+    color: #3D6670;
+    margin: 200px auto;
+}
+
 .wage {
+    width: 25%;
     padding: 10px;
-    min-width:30%;
-    min-height: 40%;
+    margin: 100px auto;
     border: none;
     background: linear-gradient(to right bottom,
     rgba(255, 255, 255, .4),
@@ -333,13 +350,17 @@
 .add__income {
     border: none;
     position: absolute;
-    top: 5%;
-    right: 5%;
+    right: 0;
+    margin: 20px;
     padding: 20px;
     color: #3D6670;
     font-weight: 800;
     box-shadow: 6px 6px 20px rgba(122, 122, 122, .2);
     transition: box-shadow 1s;
+}
+
+.add__income a {
+    color: #3D6670;
 }
 
 .add__income:hover {

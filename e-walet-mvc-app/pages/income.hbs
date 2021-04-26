@@ -1,1 +1,32 @@
 {{> add }}
+
+{{#if incomes.length}}
+{{#each incomes}}
+    <div class="wage glass">
+        <h3 class="wage__title">WAGES</h3>
+        <ul class="wage__list">
+            <li class="wage__list-item">EMPLOYER: <span>{{employer}}</span></li>
+            <li class="wage__list-item">POSITION: <span>{{position}}</span></li>
+            <li class="wage__list-item">WAGE / SALARY: <span> {{wage}}</span></li>
+            <li class="wage__list-item">MONTH: <span>Every</span></li>
+            <li class="wage__list-item"> <a href="#">CHECK SCHEDULE</a> </li>
+        </ul>
+        <div class="wage__total">
+            <h4 class="wage__total-title">Total:</h4>
+            <div class="wage__total-sum">1000 <span>CAD</span></div>
+        </div>
+        <div class="wage__total-prev">
+            <h4 class="last__month">Last Month</h4>
+                <p>1000<span>CAD</span></p>
+                <div class="diference">
+                    +100 <span>CAD</span>
+                </div>
+        </div>
+        <div class="edit__btn">
+            <a href="/income/{{id}}">Edit</a>
+        </div>
+    </div>
+{{/each}}
+{{else}}
+<p class="get__the-job">Get the job</p>
+{{/if}}
