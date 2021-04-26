@@ -1,0 +1,41 @@
+<div class="form__box glass">
+    <div class="form__container">
+        <div class="form">
+            <form action="/add" method="POST">  
+                <div class="input__field">
+                    <label for="title">Employer Name</label>
+                    <input type="text" class="validate" placeholder="Employer" id="Name">
+                </div>
+
+                <div class="input__field">
+                    <label for="position">Position</label>
+                    <input type="text" class="validate" placeholder="Position" id="position">
+                </div>
+
+                <div class="input__field">
+                    <label for="wage">Wage</label>
+                    <input type="text" class="validate" placeholder="Enter your wage" id="wage">
+                </div>
+            </form>
+        </div>
+    </div>    
+</div>
+
+<style>
+    .form__box {
+        width: 400px;
+        position: relative;
+        margin: 200px auto;
+        border: none;
+        color: #3D6670;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
