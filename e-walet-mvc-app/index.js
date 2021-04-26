@@ -5,6 +5,7 @@ const homeRoutes = require('./routes/home')
 const investRoutes = require('./routes/invest')
 const savingRoutes = require('./routes/saving')
 const incomeRoutes = require('./routes/income')
+const addRoutes = require('./routes/add')
 
 const app = express();
 
@@ -22,10 +23,7 @@ app.use('/', homeRoutes)
 app.use('/invest', investRoutes)
 app.use('/saving', savingRoutes)
 app.use('/income', incomeRoutes)
-
-app.get('/add', (req, res) => {
-    res.render('add')
-})
+app.use('/add', addRoutes)
 
 const PORT = process.env.PORT || 3000
 
