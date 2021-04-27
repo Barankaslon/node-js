@@ -330,7 +330,7 @@
 }
 
 .wage {
-    width: 25%;
+    min-width: 25%;
     padding: 10px;
     margin: 100px auto;
     border: none;
@@ -456,6 +456,14 @@
     letter-spacing: 1px;
     color: #3D6670;
     cursor: pointer;
+}
+
+.edit__btn {
+    text-align: center;
+}
+
+.edit__btn a{
+    color: #3D6670;
 }
 
 .wage__list {
