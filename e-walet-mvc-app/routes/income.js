@@ -12,5 +12,13 @@ router.get('/', async (req, res) => {
     })
 })
 
+router.get('/:id', async (req, res) => {
+    const wages = await Income.getById(req.params.id)
+    res.render('wage', {
+        title: `Your change`,
+        wages
+    })
+})
+
 
 module.exports = router

@@ -10,18 +10,24 @@
 
 
 .wrapper {
-    background: linear-gradient(to bottom, #65dfc9, #6cdbeb);
+    /* background: linear-gradient(to bottom, #65dfc9, #6cdbeb); */
+    background: linear-gradient(to bottom right, #343762, #2a2951);
     height: 100vh;
     padding-top: 25px;
 }
 
 .glass {
-    border: 1px solid #65dfc9;
+    /* border: 1px solid #65dfc9; */
+    border: none;
     border-radius: 10px;
     background-color: #fff;
-    background: linear-gradient(to right bottom,
+/*     background: linear-gradient(to right bottom,
      rgba(255, 255, 255, .6),
-     rgba(255, 255, 255, .3));
+     rgba(255, 255, 255, .3)); */
+    background: linear-gradient(to right bottom,
+     rgba(97, 32, 253, .6),
+     rgba(247, 102, 183, .3));
+    box-shadow: 6px 6px 20px rgba(26, 27, 58, .8);
 }
 
 .header {
@@ -32,7 +38,8 @@
 }
 
 .header__title {
-    color: #3D6670;
+    /* color: #3D6670; */
+    color: #ececf6;
     font-weight: 900;
     font-size: 42px;
     display: flex;
@@ -58,11 +65,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: #fef0ff;
 }
 
 .login i {
     font-size: 40px;
-    color: #3D6670;
+    color: #ececf6;
     padding: 0 15px;
 }
 
@@ -144,7 +152,8 @@
 }
 
 .dashboard a {
-    color: #3D6670;
+    color: #fff;
+    /* color: #3D6670; */
     font-weight: 600;
     letter-spacing: 2px;
 }
@@ -484,6 +493,12 @@
 .wage__total-prev {
     display: flex;
 
+}
+
+.wage__page {
+    margin: 50px auto;
+    width: 90%;
+    height: 600px;
 }
 
 .number__format {

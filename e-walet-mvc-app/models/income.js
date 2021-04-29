@@ -57,6 +57,11 @@ class Income {
             )
         })
     }
+
+    static async getById(id) {
+        const income = await Income.getAll()
+        return income.find(i => i.id === id)
+    }
 }
 
 module.exports = Income
