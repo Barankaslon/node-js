@@ -7,7 +7,7 @@
         <ul class="wage__list">
             <li class="wage__list-item">EMPLOYER: <span>{{employer}}</span></li>
             <li class="wage__list-item">POSITION: <span>{{position}}</span></li>
-            <li class="wage__list-item">WAGE / SALARY: <span> {{wage}} / hour</span></li>
+            <li class="wage__list-item">WAGE / SALARY: <span class="number__format"> {{wage}} </span>/ hour</li>
             <li class="wage__list-item">MONTH: <span>Every</span></li>
             <li class="wage__list-item"> <a href="#">CHECK SCHEDULE</a> </li>
         </ul>
@@ -28,15 +28,5 @@
     </div>
 {{/each}}
 {{else}}
-<p class="get__the-job">Get the job</p>
+    <p class="get__the-job">Get the job</p>
 {{/if}}
-
-<style>
-    .edit__btn {
-        text-align: center;
-    }
-
-    .edit__btn a{
-        color: #3D6670;
-    }
-</style>

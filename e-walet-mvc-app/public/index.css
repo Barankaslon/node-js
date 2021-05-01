@@ -484,8 +484,8 @@
     text-align: center;
 }
 
-.edit__btn a{
-    color: #3D6670;
+.edit__btn a {
+    color: #e8eaf4;
 }
 
 .wage__list {
@@ -494,13 +494,23 @@
 
 .wage__list li {
     font-weight: 600;
+    color: #202042;
 }
 
 .wage__list span {
-    font-weight: 300;
+    font-weight: 400;
     padding: 0 15px;
+    color: #faddf8;
 }
 
+.wage__list-item a {
+    color: #6323fe;
+}
+
+.wage__list-item a:hover {
+    color: #fff;
+    transition: color 1s
+}
 
 
 .wage__total-prev {
