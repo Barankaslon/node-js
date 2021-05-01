@@ -8,6 +8,17 @@
     
 }
 
+.light {
+    border-radius: 10px;
+    color: #ececf6;
+    background: linear-gradient(to right bottom,
+     rgba(255, 255, 255, .4),
+     rgba(255, 255, 255, .2));
+    border: none;
+    text-align: center;
+    box-shadow: 6px 6px 20px rgb(26, 27, 58, .8);
+}
+
 
 .wrapper {
     /* background: linear-gradient(to bottom, #65dfc9, #6cdbeb); */
@@ -268,7 +279,7 @@
     width: 5px;
     height: 50px;
     /* background: #00aa17; */
-    background: #2a2a50;
+    background: #7300a8;
     z-index: 11;
     border-radius: 4px;
 }
@@ -279,7 +290,7 @@
     width: 3px;
     height: 70px;
     /* background: #3D6670; */
-    background: #eb61c3;
+    background: #bf61eb;
     z-index: 12;
     border-radius: 4px;
 }
@@ -334,6 +345,7 @@
     position: absolute;
     right: 0;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .get__the-job {
@@ -347,12 +359,13 @@
 .wage {
     min-width: 25%;
     padding: 10px;
-    margin: 100px auto;
+    margin: 100px auto 0;
     border: none;
     background: linear-gradient(to right bottom,
-    rgba(255, 255, 255, .4),
-    rgba(255, 255, 255, .2));
-    box-shadow: 6px 6px 20px rgba(122, 122, 122, .2);
+    rgba(255, 255, 255, .3),
+    rgba(255, 255, 255, .1));
+    /* box-shadow: 6px 6px 20px rgba(122, 122, 122, .4); */
+    box-shadow: 6px 6px 20px rgb(26, 27, 58, .8);
 }
 
 .wage__title {
@@ -530,4 +543,5 @@
 
 .footer {
     text-align: center;
+    color: #fff;
 }
