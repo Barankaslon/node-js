@@ -15,12 +15,38 @@
     </div>
 </div> --}}
     <div class="wage__details">
-        <h3 class="wage__title">Your Wage Details</h3>
 
-            <div class="employer light">
+        <div class="wage__title">
+            <h3>Your Wage Details</h3>
+        </div>
+
+        <div class="wage__info">
+            <div class="employer light sm-box">
                 <p>Company: <span>{{wages.employer}}</span></p>
             </div>
-            <div class="week__income">
+            <div class="position light sm-box">
+                <p>Position: <span>{{wages.position}}</span></p>
+            </div>
+            <div class="week__income light sm-box">
                 <p>Your week income: <span></span></p>
             </div>
+        </div>
+
     </div>
+
+    <style>
+        .wage__details {
+            width: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        .wage__title {
+            margin: 20px;
+        }
+
+        .wage__info {
+            width: 100%;
+            position: relative;
+        }
+    </style>
