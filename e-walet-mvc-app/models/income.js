@@ -19,6 +19,26 @@ class Income {
         }
     }
 
+    static async update(wage) {
+        const incomes = await Income.getAll()
+
+        const idx = incomes.findIndex(i => i.id === wage.id)
+        incomes[idx] = wage
+        return new Promise((resolve, reject) => {
+            fs.writeFile(
+                path.join(__dirname, '..', 'data', 'incomes.json'),
+                JSON.stringify(incomes),
+                (err) => {
+                    if (err) {
+                        reject(err)
+                    }else{
+                        resolve()
+                    }
+                }
+            )
+        })
+    }
+
     async save() {
         const incomes = await Income.getAll()
         incomes.push(this.toJSON())

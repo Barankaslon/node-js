@@ -25,6 +25,11 @@ router.get('/:id/edit', async (req, res) => {
     })
 })
 
+router.post('/edit', async (req, res) => {
+    await Income.update(req.body)
+    res.redirect('/income')
+})
+
 router.get('/:id', async (req, res) => {
     const wages = await Income.getById(req.params.id)
     res.render('wage', {
