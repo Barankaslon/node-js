@@ -1,0 +1,29 @@
+
+
+<div class="form__box glass">
+    <div class="form__container">
+        <div class="form">
+            <h3>Edit your income card</h3>
+            <form action="/income/edit" method="POST">  
+                <div class="input__field">
+                    <label for="title">Employer Name</label>
+                    <input type="text" name="employer" class="validate" placeholder="Employer" id="Name" required value="{{wage.employer}}">
+                </div>
+
+                <div class="input__field">
+                    <label for="position">Position</label>
+                    <input type="text" name="position" class="validate" placeholder="Position" id="position" required value="{{wage.position}}">
+                </div>
+
+                <div class="input__field">
+                    <label for="wage">Wage</label>
+                    <input type="text" name="wage" class="validate" placeholder="Enter your wage" id="wage" required value="{{wage.wage}}">
+                </div>
+
+                <div class="input__field">
+                    <button class="btn">Edit</button>
+                </div>
+            </form>
+        </div>
+    </div>    
+</div>

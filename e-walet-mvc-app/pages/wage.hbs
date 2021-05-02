@@ -28,9 +28,10 @@
                 <p>Position: <span>{{wages.position}}</span></p>
             </div>
             <div class="week__income light sm-box">
-                <p>Your week income: <span></span></p>
+                <p>Your week income: <span class="number__format" id="income">{{wages.wage}}</span></p>
             </div>
         </div>
+        <a class="light" href="/income/{{wages.id}}/edit?allow=true">Edit</a>
 
     </div>
 
