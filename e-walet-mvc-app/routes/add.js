@@ -10,11 +10,20 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-    const income = new Income(req.body.employer, req.body.position, req.body.wage)
+    /* const income = new Income(req.body.employer, req.body.position, req.body.wage) */
+    const income = new Income({
+        employer: req.body.employer, 
+        position: req.body.position, 
+        wage: req.body.wage
+    })
 
-    await income.save()
+    try {
+        await income.save()
+        res.redirect('/income')
+    } catch (e) {
+        console.log(e)
+    }
 
-    res.redirect('/income')
 })
 
 

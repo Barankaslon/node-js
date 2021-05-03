@@ -1,4 +1,33 @@
-const uuid = require('uuid').v4
+const {Schema, model} = require('mongoose')
+
+const opts = {
+    toObject: {
+        virtuals: true,
+    },
+    toJSON: {
+        virtuals: true,
+    },
+};
+
+const income = new Schema({
+    employer: {
+        type: String,
+        required: true
+    },
+    position: {
+        type: String,
+        required: true
+    },
+    wage: {
+        type: Number,
+        required: true
+    }
+}, opts)
+
+
+module.exports = model('Income', income)
+
+/* const uuid = require('uuid').v4
 const fs = require('fs')
 const path = require('path')
 
@@ -84,4 +113,4 @@ class Income {
     }
 }
 
-module.exports = Income
+module.exports = Income */
