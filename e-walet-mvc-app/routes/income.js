@@ -33,6 +33,15 @@ router.post('/edit', async (req, res) => {
     res.redirect('/income')
 })
 
+router.post('/remove', async (req, res) => {
+    try {
+        await Income.deleteOne({_id: req.body.id})
+        res.redirect('/income')
+    } catch(e) {
+        console.log(e)
+    }
+})
+
 router.get('/:id', async (req, res) => {
     const wages = await Income.findById(req.params.id)
     res.render('wage', {

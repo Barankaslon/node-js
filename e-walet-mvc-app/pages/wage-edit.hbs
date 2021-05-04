@@ -23,8 +23,14 @@
                 <input type="hidden" name="id" value="{{wage.id}}">
 
                 <div class="input__field">
-                    <button class="btn">Save</button>
+                    <button type="submit" class="btn">Save</button>
                 </div>
+            </form>
+            <form action="/income/remove" method="POST">
+                <input type="hidden" name="id" value="{{wage.id}}">
+                    <div class="input__field">
+                        <button type="submit" class="delete__btn">Delete</button>
+                    </div>
             </form>
         </div>
     </div>    

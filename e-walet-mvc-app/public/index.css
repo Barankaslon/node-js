@@ -547,6 +547,28 @@
     font-size: 16px;
 }
 
+.delete__btn {
+    width: 100%;
+    background: rgba(233, 70, 255, 0.2);
+    border: none;
+    outline: none;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 35px;
+    border: 1px solid rgba(98, 0, 255, 0.5);
+    border-right: 1px solid rgba(183, 0, 255, 0.2);
+    border-bottom: 1px solid rgba(140, 0, 255, 0.2);
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #fff;
+    cursor: pointer;
+}
+.delete__btn::hover {
+    background: rgba(254, 234, 255, .6);
+    color: #fff;
+    transition: background .5s;
+}
+
 .footer {
     text-align: center;
     color: #fff;
