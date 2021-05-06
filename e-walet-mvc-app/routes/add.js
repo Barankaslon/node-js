@@ -14,7 +14,8 @@ router.post('/', async (req, res) => {
     const income = new Income({
         employer: req.body.employer, 
         position: req.body.position, 
-        wage: req.body.wage
+        wage: req.body.wage,
+        userId: req.user
     })
 
     try {

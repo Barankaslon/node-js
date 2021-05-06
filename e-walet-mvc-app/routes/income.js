@@ -4,7 +4,10 @@ const Income = require('../models/income')
 const router = Router()
 
 router.get('/', async (req, res) => {
-    const incomes = await Income.find()
+    const incomes = await Income.find().populate('userId')
+
+    console.log(incomes)
+
     const fixedIncomes = incomes.map(i => i.toObject());
     res.render('income', {
         title: 'Your income',

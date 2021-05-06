@@ -21,6 +21,10 @@ const income = new Schema({
     wage: {
         type: Number,
         required: true
+    },
+    userId: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
     }
 }, opts)
 
