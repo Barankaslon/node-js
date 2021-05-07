@@ -33,6 +33,15 @@
                 <a class="income__link" href="/income">INCOME</a>
             </div>
         {{/if}}
+        {{#if isTotal}}
+            <div class="total glass active cursor">
+                <a class="total__link" href="/total">TOTAL</a>
+            </div>
+        {{else}}
+            <div class="total glass cursor">
+                <a class="total__link" href="/total">TOTAL</a>
+            </div>
+        {{/if}}
     </div>
 
     <div class="time">

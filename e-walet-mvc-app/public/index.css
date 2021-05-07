@@ -182,7 +182,8 @@
 
 .invest,
 .savings,
-.income {
+.income,
+.total {
     border: none;
     margin: 10px;
     padding: 10px 0;
