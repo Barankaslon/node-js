@@ -8,6 +8,7 @@ const savingRoutes = require('./routes/saving')
 const incomeRoutes = require('./routes/income')
 const totalRoutes = require('./routes/total')
 const addRoutes = require('./routes/add')
+const authRoutes = require('./routes/auth')
 const User = require('./models/user')
 
 const app = express();
@@ -40,6 +41,7 @@ app.use('/saving', savingRoutes)
 app.use('/income', incomeRoutes)
 app.use('/total', totalRoutes)
 app.use('/add', addRoutes)
+app.use('/auth', authRoutes)
 
 const PORT = process.env.PORT || 3000
 

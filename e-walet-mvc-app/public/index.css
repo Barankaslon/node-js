@@ -91,6 +91,12 @@
     padding: 0 15px;
 }
 
+.login a {
+    font-size: 20px;
+    color: #ececf6;
+    padding: 0 15px;
+}
+
 .main {
     width: 80%;
     height: 700px;
