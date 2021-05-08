@@ -5,6 +5,21 @@
         <li class="tab"><a href="#registration">Sign Up</a></li>
       </ul>
     </div>
-    <div id="login" class="col">Test 1</div>
+    <div id="login" class="col">
+         <form action="/add" method="POST">  
+                <div class="input__field">
+                    <label for="email">Enter Email</label>
+                    <input type="email" name="email" class="validate" placeholder="Email" id="email" required>
+                </div>
+
+                <div class="input__field">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" class="validate" placeholder="password" id="password" required>
+                </div>
+                <div class="input__field">
+                    <button class="btn" type="submit">Log In</button>
+                </div>
+            </form>
+    </div>
     <div id="registration" class="col">Test 2</div>
   </div>
