@@ -6,6 +6,7 @@
       </ul>
     </div>
     <div id="login" class="col">
+        <h3>Log In</h3>
          <form action="/add" method="POST">  
                 <div class="input__field">
                     <label for="email">Enter Email</label>
@@ -21,5 +22,21 @@
                 </div>
             </form>
     </div>
-    <div id="registration" class="col">Test 2</div>
+    <div id="registration" class="col">
+                <h3>Sign Up</h3>
+         <form action="/add" method="POST">  
+                <div class="input__field">
+                    <label for="remail">Enter Email</label>
+                    <input type="remail" name="email" class="validate" placeholder="Email" id="email" required>
+                </div>
+
+                <div class="input__field">
+                    <label for="rpassword">Password</label>
+                    <input type="rpassword" name="password" class="validate" placeholder="password" id="password" required>
+                </div>
+                <div class="input__field">
+                    <button class="btn" type="submit">Sign Up</button>
+                </div>
+            </form>
+    </div>
   </div>
