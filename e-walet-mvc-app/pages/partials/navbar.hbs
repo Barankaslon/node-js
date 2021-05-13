@@ -1,48 +1,59 @@
 <div class="dashboard glass">
-    <div class="user">
-        <img src="/images/logo.svg" alt="">
-        <span>USER NAME</span>
-    </div>
-    <div class="tools">
-        {{#if isInvest}}
-            <div class="invest glass active cursor">
-                <a class="invest__link" href="/invest">INVESTMENTS</a>
-            </div>
-        {{else}}
-            <div class="invest glass cursor">
-                <a class="invest__link" href="/invest">INVESTMENTS</a>
-            </div>
-        {{/if}}
 
-        {{#if isSaving}}
-            <div class="savings glass active cursor">
-                <a class="savings__link" href="/saving">SAVINGS</a>
-            </div>
-        {{else}}
-            <div class="savings glass cursor">
-                <a class="savings__link" href="/saving">SAVINGS</a>
-            </div>
-        {{/if}}
+    {{#if isAuth}}
+            <div class="user">
+            <img src="/images/logo.svg" alt="">
+            <span>USER NAME</span>
+        </div>
+        <div class="tools">
+            {{#if isInvest}}
+                <div class="invest glass active cursor">
+                    <a class="invest__link" href="/invest">INVESTMENTS</a>
+                </div>
+            {{else}}
+                <div class="invest glass cursor">
+                    <a class="invest__link" href="/invest">INVESTMENTS</a>
+                </div>
+            {{/if}}
 
-        {{#if isIncome}}
-            <div class="income glass active cursor">
-                <a class="income__link" href="/income">INCOME</a>
-            </div>
-        {{else}}
-            <div class="income glass cursor">
-                <a class="income__link" href="/income">INCOME</a>
-            </div>
-        {{/if}}
-        {{#if isTotal}}
-            <div class="total glass active cursor">
-                <a class="total__link" href="/total">TOTAL</a>
-            </div>
-        {{else}}
-            <div class="total glass cursor">
-                <a class="total__link" href="/total">TOTAL</a>
-            </div>
-        {{/if}}
-    </div>
+            {{#if isSaving}}
+                <div class="savings glass active cursor">
+                    <a class="savings__link" href="/saving">SAVINGS</a>
+                </div>
+            {{else}}
+                <div class="savings glass cursor">
+                    <a class="savings__link" href="/saving">SAVINGS</a>
+                </div>
+            {{/if}}
+
+            {{#if isIncome}}
+                <div class="income glass active cursor">
+                    <a class="income__link" href="/income">INCOME</a>
+                </div>
+            {{else}}
+                <div class="income glass cursor">
+                    <a class="income__link" href="/income">INCOME</a>
+                </div>
+            {{/if}}
+            {{#if isTotal}}
+                <div class="total glass active cursor">
+                    <a class="total__link" href="/total">TOTAL</a>
+                </div>
+            {{else}}
+                <div class="total glass cursor">
+                    <a class="total__link" href="/total">TOTAL</a>
+                </div>
+            {{/if}}
+        </div>
+    {{else}}
+        <div class="please__enter light">
+          <a href="/auth/login#login">Please Log In</a>  
+        </div>
+
+    {{/if}}
+
+
+
 
     <div class="time">
         <div class="box">
@@ -71,3 +82,4 @@
 
 
 </div>
+

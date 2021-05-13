@@ -8,10 +8,18 @@
         E-Wallet
         <span>APLICATION</span>
     </div>
+    {{#if isAuth}}
+    <div class="login logout">
+        <i class="far fa-user"></i>
+        <a href="/auth/logout">LOG OUT</a>
+    </div>
+    {{else}}
     <div class="login">
         <i class="far fa-user"></i>
         <a href="/auth/login">LOGIN</a>
     </div>
+    {{/if}}
+
 </div>
 
 <style>
