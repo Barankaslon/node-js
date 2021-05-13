@@ -3,6 +3,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 const exphbs = require('express-handlebars')
 const session = require('express-session');
+const MongoStore = require('connect-mongodb-session') (session)
 const homeRoutes = require('./routes/home')
 const investRoutes = require('./routes/invest')
 const savingRoutes = require('./routes/saving')
@@ -13,11 +14,16 @@ const authRoutes = require('./routes/auth')
 const User = require('./models/user')
 const varMiddleware = require('./middleware/variables')
 
+const MONGODB_URI = `mongodb+srv://admin:4I4ZvtUP8CSWvaSX@cluster0.j7czu.mongodb.net/income`
 const app = express();
 
 const hbs = exphbs.create({
     defaultLayout: 'main',
     extname: 'hbs'
+})
+const store = new MongoStore({
+    collection: 'sessions',
+    uri: MONGODB_URI
 })
 
 app.engine('hbs', hbs.engine)
@@ -40,7 +46,8 @@ app.use(express.urlencoded({extended: true}))
 app.use(session({
     secret: 'some secret value',
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
+    store
 }))
 app.use(varMiddleware)
 
@@ -57,8 +64,8 @@ const PORT = process.env.PORT || 3000
 
 async function start() {
     try {
-        const url = `mongodb+srv://admin:4I4ZvtUP8CSWvaSX@cluster0.j7czu.mongodb.net/income`
-        await mongoose.connect(url, {
+        /* const url = `mongodb+srv://admin:4I4ZvtUP8CSWvaSX@cluster0.j7czu.mongodb.net/income` */
+        await mongoose.connect(MONGODB_URI, {
             useNewUrlParser: true,
             useFindAndModify: false,
             useUnifiedTopology: true
