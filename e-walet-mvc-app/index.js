@@ -24,7 +24,7 @@ app.engine('hbs', hbs.engine)
 app.set('view engine', 'hbs')
 app.set('views', 'pages')
 
-app.use(async (req, res, next) => {
+/* app.use(async (req, res, next) => {
     try {
         const user = await User.findById('60931b6fa10dca1e7cad0ecb')
         req.user = user
@@ -33,7 +33,7 @@ app.use(async (req, res, next) => {
         console.log(e)
     }
 
-})
+}) */
 
 app.use(express.static('public'))
 app.use(express.urlencoded({extended: true}))
@@ -63,7 +63,7 @@ async function start() {
             useFindAndModify: false,
             useUnifiedTopology: true
         })
-        const candidate = await User.findOne()
+/*         const candidate = await User.findOne()
         if (!candidate) {
             const user = new User ({
                 email: 'barankaslon@hotmail.com',
@@ -71,7 +71,7 @@ async function start() {
                 sum: {total: []}
             })
             await user.save()
-        }
+        } */
         app.listen(PORT, () => {
             console.log(`Server is running on port ${PORT}`)
         })
