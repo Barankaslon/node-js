@@ -28,4 +28,24 @@ router.post('/login', async (req, res) => {
     })
 })
 
+router.post('/registration', async (req, res) => {
+    try {
+        const {email, password, repeat, name} = req.body
+
+        const condidate = await User.findOne({ email })
+
+        if(condidate) {
+            res.redirect('/auth/login#registration')
+        } else {
+            const user = new User({
+                email, name, password, sum: {total: []}
+            })
+            await user.save()
+            res.redirect('/auth/login#login')
+        }
+    } catch (e) {
+        console.log(e) 
+    }
+})
+
 module.exports = router
