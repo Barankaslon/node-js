@@ -1,9 +1,10 @@
 const {Router} = require('express');
 const Income = require('../models/income')
+const auth = require('../middleware/auth')
 
 const router = Router()
 
-router.get('/', async (req, res) => {
+router.get('/', auth, async (req, res) => {
     const incomes = await Income.find().populate('userId')
 
     console.log(incomes)
@@ -16,7 +17,7 @@ router.get('/', async (req, res) => {
     })
 })
 
-router.get('/:id/edit', async (req, res) => {
+router.get('/:id/edit', auth, async (req, res) => {
     if(!req.query.allow) {
         return res.redirect('/')
     }
@@ -29,14 +30,14 @@ router.get('/:id/edit', async (req, res) => {
     })
 })
 
-router.post('/edit', async (req, res) => {
+router.post('/edit', auth, async (req, res) => {
     const {id} = req.body
     delete req.body.id
     await Income.findByIdAndUpdate(id, req.body)
     res.redirect('/income')
 })
 
-router.post('/remove', async (req, res) => {
+router.post('/remove', auth, async (req, res) => {
     try {
         await Income.deleteOne({_id: req.body.id})
         res.redirect('/income')
