@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const csurf = require('csurf')
 const mongoose = require('mongoose');
 const exphbs = require('express-handlebars')
 const session = require('express-session');
@@ -49,6 +50,8 @@ app.use(session({
     saveUninitialized: false,
     store
 }))
+
+app.use(csurf())
 app.use(varMiddleware)
 
 app.use('/', homeRoutes)

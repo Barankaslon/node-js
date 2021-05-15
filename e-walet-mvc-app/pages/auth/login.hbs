@@ -18,6 +18,9 @@
                     <label for="password">Password</label>
                     <input type="password" name="password" class="validate" placeholder="password" id="password" required>
                 </div>
+                
+                <input type="hidden" name="_csrf" value="{{csurf}}">
+
                 <div class="input__field">
                     <button class="btn" type="submit">Log In</button>
                 </div>
@@ -44,6 +47,9 @@
                     <label for="confirm">Repeat Password</label>
                     <input type="password" name="confirm" class="validate" placeholder="Repeat password" id="confirm" required>
                 </div>
+
+                <input type="hidden" name="_csrf" value="{{csurf}}">
+
                 <div class="input__field">
                     <button class="btn" type="submit">Sign Up</button>
                 </div>
