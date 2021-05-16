@@ -7,6 +7,11 @@
     </div> --}}
 
     <div id="login" class="col">
+
+        {{#if loginError}}
+            <p>{{loginError}}</p>
+        {{/if}}
+
         <h3>Log In</h3>
          <form action="/auth/login" method="POST">  
                 <div class="input__field">
@@ -27,6 +32,11 @@
             </form>
     </div>
     <div id="registration" class="col">
+
+        {{#if registError}}
+            <p>{{registError}}</p>
+        {{/if}}
+
                 <h3>Sign Up</h3>
          <form action="/auth/registration" method="POST">  
                 <div class="input__field">

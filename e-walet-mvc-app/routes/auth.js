@@ -7,7 +7,9 @@ const router = Router()
 router.get('/login', async (req, res) => {
     res.render('auth/login', {
         title: 'SignIn',
-        isLogin: true
+        isLogin: true,
+        loginError: req.flash('loginError'),
+        registError: req.flash('registError')
     })
 })
 
@@ -36,9 +38,11 @@ router.post('/login', async (req, res) => {
                     res.redirect('/')
                 })
             } else {
+                req.flash('loginError', 'Wrong password')
                 res.redirect('/auth/login#login')
             }
         } else {
+            req.flash('loginError', 'this email is not registered')
             res.redirect('/auth/login#login')
         }
     } catch (e) {
@@ -53,6 +57,7 @@ router.post('/registration', async (req, res) => {
         const condidate = await User.findOne({ email })
 
         if(condidate) {
+            req.flash('registError', 'this email is already registered')
             res.redirect('/auth/login#registration')
         } else {
             const salt = bcrypt.genSaltSync(10);

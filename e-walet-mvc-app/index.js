@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
-const csurf = require('csurf')
+const csurf = require('csurf');
+const flash = require('connect-flash')
 const mongoose = require('mongoose');
 const exphbs = require('express-handlebars')
 const session = require('express-session');
@@ -52,6 +53,7 @@ app.use(session({
 }))
 
 app.use(csurf())
+app.use(flash())
 app.use(varMiddleware)
 
 app.use('/', homeRoutes)
