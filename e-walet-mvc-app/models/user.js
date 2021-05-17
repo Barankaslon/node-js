@@ -28,4 +28,21 @@ const userSchema = new Schema({
     }
 })
 
+userSchema.methods.addToWage = function(income) {
+    const clonedTotal = [...this.sum.total]
+    const index = clonedTotal.findIndex(c => {
+        return c.incomeId.toString() === income._id.toString()
+    })
+    clonedTotal.push({
+        incomeId: income._id
+    })
+
+/*     const newWage = {total: clonedTotal}
+    this.wage = newWage */
+
+    this.wage = {total: clonedTotal}
+
+    return this.save()
+}
+
 module.exports = model('User', userSchema)

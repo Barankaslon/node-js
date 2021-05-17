@@ -18,10 +18,11 @@
                     <input type="text" name="wage" class="validate" placeholder="Enter your wage" id="wage" required>
                 </div>
 
-                <input type="hidden" name="_csurf" value="{{csurf}}">
+                <input type="hidden" name="_csrf" value="{{csrf}}">
+                <input type="hidden" name="id" value="{{id}}">
 
                 <div class="input__field">
-                    <button class="btn">Add</button>
+                    <button type="submit" class="btn">Add</button>
                 </div>
             </form>
         </div>

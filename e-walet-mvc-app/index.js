@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const csurf = require('csurf');
+const csrf = require('csurf');
 const flash = require('connect-flash')
 const mongoose = require('mongoose');
 const exphbs = require('express-handlebars')
@@ -12,11 +12,12 @@ const savingRoutes = require('./routes/saving')
 const incomeRoutes = require('./routes/income')
 const totalRoutes = require('./routes/total')
 const addRoutes = require('./routes/add')
+const wageRoutes = require('./routes/wage')
 const authRoutes = require('./routes/auth')
 const User = require('./models/user')
 const varMiddleware = require('./middleware/variables')
+const keys = require('./keys')
 
-const MONGODB_URI = `mongodb+srv://admin:4I4ZvtUP8CSWvaSX@cluster0.j7czu.mongodb.net/income`
 const app = express();
 
 const hbs = exphbs.create({
@@ -25,7 +26,7 @@ const hbs = exphbs.create({
 })
 const store = new MongoStore({
     collection: 'sessions',
-    uri: MONGODB_URI
+    uri: keys.MONGODB_URI
 })
 
 app.engine('hbs', hbs.engine)
@@ -46,13 +47,13 @@ app.set('views', 'pages')
 app.use(express.static('public'))
 app.use(express.urlencoded({extended: true}))
 app.use(session({
-    secret: 'some secret value',
+    secret: keys.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     store
 }))
 
-app.use(csurf())
+app.use(csrf())
 app.use(flash())
 app.use(varMiddleware)
 
@@ -62,6 +63,7 @@ app.use('/saving', savingRoutes)
 app.use('/income', incomeRoutes)
 app.use('/total', totalRoutes)
 app.use('/add', addRoutes)
+app.use('/wage', wageRoutes)
 app.use('/auth', authRoutes)
 
 const PORT = process.env.PORT || 3000
@@ -70,7 +72,7 @@ const PORT = process.env.PORT || 3000
 async function start() {
     try {
         /* const url = `mongodb+srv://admin:4I4ZvtUP8CSWvaSX@cluster0.j7czu.mongodb.net/income` */
-        await mongoose.connect(MONGODB_URI, {
+        await mongoose.connect(keys.MONGODB_URI, {
             useNewUrlParser: true,
             useFindAndModify: false,
             useUnifiedTopology: true

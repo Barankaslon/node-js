@@ -9,7 +9,7 @@
     <div id="login" class="col">
 
         {{#if loginError}}
-            <p>{{loginError}}</p>
+            <p class="alert__message light">{{loginError}}</p>
         {{/if}}
 
         <h3>Log In</h3>
@@ -24,7 +24,7 @@
                     <input type="password" name="password" class="validate" placeholder="password" id="password" required>
                 </div>
                 
-                <input type="hidden" name="_csrf" value="{{csurf}}">
+                <input type="hidden" name="_csrf" value="{{csrf}}">
 
                 <div class="input__field">
                     <button class="btn" type="submit">Log In</button>
@@ -34,7 +34,7 @@
     <div id="registration" class="col">
 
         {{#if registError}}
-            <p>{{registError}}</p>
+            <p class="alert__message light">{{registError}}</p>
         {{/if}}
 
                 <h3>Sign Up</h3>
@@ -58,7 +58,7 @@
                     <input type="password" name="confirm" class="validate" placeholder="Repeat password" id="confirm" required>
                 </div>
 
-                <input type="hidden" name="_csrf" value="{{csurf}}">
+                <input type="hidden" name="_csrf" value="{{csrf}}">
 
                 <div class="input__field">
                     <button class="btn" type="submit">Sign Up</button>
