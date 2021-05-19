@@ -28,19 +28,20 @@ const userSchema = new Schema({
     }
 })
 
-userSchema.methods.addToWage = function(income) {
-    const clonedTotal = [...this.sum.total]
-    const index = clonedTotal.findIndex(c => {
-        return c.incomeId.toString() === income._id.toString()
+userSchema.methods.addToTotalIncome = function(income) {
+    const clonedTotalIncome = [...this.sum.total]
+    const index = clonedTotalIncome.findIndex(i => {
+        return i.incomeId.toString() === income._id.toString()
     })
-    clonedTotal.push({
-        incomeId: income._id
+    clonedTotalIncome.push({
+        incomeId: income._id,
+        incomes: income
     })
+/* 
+    const newTotalIncome = {total: clonedTotalIncome}
+    this.total = newTotal */
 
-/*     const newWage = {total: clonedTotal}
-    this.wage = newWage */
-
-    this.wage = {total: clonedTotal}
+    this.income = {total: clonedTotalIncome}
 
     return this.save()
 }
